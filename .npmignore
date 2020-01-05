@@ -12,3 +12,8 @@ tmp
 examples
 
 .DS_Store
+.cache
+.github
+.storybook
+stories
+test

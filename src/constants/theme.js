@@ -1,10 +1,12 @@
 const colors = {
   primary: '#0F4C81',
+  lightPrimary: '#778398',
+  darkPrimary: '#001129',
   success: '#14822C',
   danger: '#D82C29',
   warning: '#FCB400',
   info: '#007AD8',
-  black: '#2E384D',
+  black: '#111111',
   white: '#FFFFFF',
   gray: '#C4C4C4',
   lightGray: '#E9EBED',
@@ -91,12 +93,16 @@ export default {
     shadowColor: colors.shadow,
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 0.15,
-    shadowRadius: 12,
-    elevation: 4
+    shadowRadius: 4,
+    elevation: 2
   },
   spinner: {
     overlayColor: 'rgba(0, 0, 0, 0.2)',
     spinnerColor: colors.black,
     containerColor: colors.white
+  },
+  switch: {
+    thumbColor: colors.primary,
+    backgroundColor: colors.lightGray
   }
 };

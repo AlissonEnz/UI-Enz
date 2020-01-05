@@ -2,11 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Animated, View } from 'react-native';
 
+import { ThemeContext } from '../../constants/context';
 import styles from './styles';
 
 const SPIN_DURATION = 1000;
 
-export default function Spin({ visible, fullscreen }) {
+export default function Spin(props) {
+  const { visible, fullscreen, style, ...rest } = props;
+
   if (!visible) return null;
 
   const spinValue = new Animated.Value(0);
@@ -23,17 +26,30 @@ export default function Spin({ visible, fullscreen }) {
     outputRange: ['0deg', '360deg']
   });
 
-  if (fullscreen) {
-    return (
-      <View style={styles.overlay}>
-        <View style={styles.container}>
-          <Animated.View style={[styles.spinner, { transform: [{ rotate: spin }] }]} />
-        </View>
-      </View>
-    );
-  }
 
-  return <Animated.View style={[styles.spinner, { transform: [{ rotate: spin }] }]} />;
+  return (
+    <ThemeContext.Consumer>
+      {theme => {
+        const stylesheet = styles(theme);
+        const spinStyles = [styles.spinner, style, { transform: [{ rotate: spin }] }];
+        if (fullscreen) {
+
+          return (
+            <View style={stylesheet.overlay}>
+              <View style={stylesheet.container}>
+                <Animated.View {...rest} style={spinStyles} />
+              </View>
+            </View>
+          );
+        }
+
+        return <Animated.View {...rest} style={spinStyles} />;
+      }}
+    </ThemeContext.Consumer>
+  );
+}
+
+  
 }
 
 Spin.propTypes = {

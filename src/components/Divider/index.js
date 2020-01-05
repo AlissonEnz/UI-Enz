@@ -12,7 +12,6 @@ export default function Divider(props) {
     <ThemeContext.Consumer>
       {theme => {
         const stylesheet = styles(theme);
-
         const dividerStyles = [stylesheet.divider, style];
 
         return <Block style={dividerStyles} {...rest} />;
