@@ -3,28 +3,37 @@ import { StyleSheet } from 'react-native';
 export default theme =>
   StyleSheet.create({
     button: {
-      ...theme.button,
-      flex: 1,
       alignItems: 'center',
-      justifyContent: 'center'
+      justifyContent: 'center',
+      paddingVertical: 8,
+      paddingHorizontal: 16,
+      borderWidth: 2,
+      borderRadius: 4,
+      ...theme.button
     },
-    large: theme.buttonLarge,
-    small: theme.buttonSmall,
+    large: {
+      paddingVertical: 12,
+      paddingHorizontal: 24
+    },
+    small: {
+      paddingVertical: 4,
+      paddingHorizontal: 8
+    },
     primary: {
-      borderColor: theme.color.primary,
-      backgroundColor: theme.color.primary
+      borderColor: theme.colors.primary,
+      backgroundColor: theme.colors.primary
     },
     success: {
-      borderColor: theme.color.success,
-      backgroundColor: theme.color.success
+      borderColor: theme.colors.success,
+      backgroundColor: theme.colors.success
     },
     danger: {
-      borderColor: theme.color.danger,
-      backgroundColor: theme.color.danger
+      borderColor: theme.colors.danger,
+      backgroundColor: theme.colors.danger
     },
     warning: {
-      borderColor: theme.color.warning,
-      backgroundColor: theme.color.warning
+      borderColor: theme.colors.warning,
+      backgroundColor: theme.colors.warning
     },
     transparent: {
       borderColor: 'transparent',
@@ -34,28 +43,33 @@ export default theme =>
       backgroundColor: 'transparent'
     },
     disabled: {
-      borderColor: theme.color.gray,
-      backgroundColor: theme.color.gray
+      borderColor: theme.colors.gray,
+      backgroundColor: theme.colors.gray
+    },
+    text: {
+      fontSize: theme.sizes.md,
+      fontFamily: theme.fonts.medium,
+      color: theme.colors.white
     },
     textPrimary: {
-      color: theme.color.primary
+      color: theme.colors.primary
     },
     textSuccess: {
-      color: theme.color.success
+      color: theme.colors.success
     },
     textDanger: {
-      color: theme.color.danger
+      color: theme.colors.danger
     },
     textWarning: {
-      color: theme.color.warning
+      color: theme.colors.warning
     },
     textLarge: {
-      fontSize: theme.size.large
+      fontSize: theme.sizes.lg
     },
     textSmall: {
-      fontSize: theme.size.small
+      fontSize: theme.sizes.sm
     },
     textDisabled: {
-      color: theme.color.darkGray
+      color: theme.colors.darkGray
     }
   });

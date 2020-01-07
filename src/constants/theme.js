@@ -22,10 +22,12 @@ const fonts = {
 };
 
 const sizes = {
-  sm: 8,
-  md: 16,
-  lg: 24,
-  xl: 32
+  sm: 10,
+  md: 14,
+  lg: 22,
+  xl: 34,
+  xxl: 48,
+  xxxl: 52
 };
 
 export default {
@@ -33,61 +35,43 @@ export default {
   fonts,
   sizes,
   button: {
-    borderWidth: 2,
-    borderRadius: 4,
-    paddingVertical: 4,
-    paddingHorizontal: 12
-  },
-  buttonLarge: {
-    paddingVertical: 6,
-    paddingHorizontal: 16
-  },
-  buttonSmall: {
-    paddingVertical: 2,
-    paddingHorizontal: 8
+    backgroundColor: colors.primary
   },
   title: {
     fontFamily: fonts.medium,
-    fontSize: 52,
+    fontSize: sizes.xxxl,
     color: colors.black,
-    lineHeight: 60
+    lineHeight: sizes.xxxl + 4
   },
   h1: {
     fontFamily: fonts.light,
-    fontSize: 48,
+    fontSize: sizes.xxl,
     color: colors.black,
-    lineHeight: 56
+    lineHeight: sizes.xxl + 2
   },
   h2: {
     fontFamily: fonts.light,
-    fontSize: 34,
+    fontSize: sizes.xl,
     color: colors.black,
-    lineHeight: 34
+    lineHeight: sizes.xl
   },
   h3: {
-    fontFamily: fonts.light,
-    fontSize: 28,
-    color: colors.black,
-    lineHeight: 32
-  },
-  h4: {
     fontFamily: fonts.medium,
-    fontSize: 14,
+    fontSize: sizes.md,
     color: colors.black,
-    lineHeight: 18
+    lineHeight: sizes.md
   },
   body: {
     fontFamily: fonts.regular,
-    fontSize: 14,
+    fontSize: sizes.md,
     color: colors.black,
-    lineHeight: 22
+    lineHeight: sizes.md + 2
   },
   caption: {
     fontFamily: fonts.regular,
-    fontSize: 12,
+    fontSize: sizes.sm,
     color: colors.black3,
-    letterSpacing: 1,
-    lineHeight: 14
+    lineHeight: sizes.sm + 2
   },
   shadow: {
     shadowColor: colors.shadow,

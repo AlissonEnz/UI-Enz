@@ -26,14 +26,12 @@ export default function Spin(props) {
     outputRange: ['0deg', '360deg']
   });
 
-
   return (
     <ThemeContext.Consumer>
       {theme => {
         const stylesheet = styles(theme);
-        const spinStyles = [styles.spinner, style, { transform: [{ rotate: spin }] }];
+        const spinStyles = [stylesheet.spinner, style, { transform: [{ rotate: spin }] }];
         if (fullscreen) {
-
           return (
             <View style={stylesheet.overlay}>
               <View style={stylesheet.container}>
@@ -49,15 +47,14 @@ export default function Spin(props) {
   );
 }
 
-  
-}
-
 Spin.propTypes = {
   visible: PropTypes.bool,
-  fullscreen: PropTypes.bool
+  fullscreen: PropTypes.bool,
+  style: PropTypes.object
 };
 
 Spin.defaultProps = {
   visible: false,
-  fullscreen: false
+  fullscreen: false,
+  style: {}
 };

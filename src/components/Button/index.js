@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { TouchableOpacity } from 'react-native';
-import { View } from 'react-native-animatable';
+import { View, Text } from 'react-native-animatable';
 
 import { ThemeContext } from '../../constants/context';
-import Text from '../Text';
+// import Text from '../Text';
 import Spin from '../Spin';
 import styles from './styles';
 
@@ -62,7 +62,7 @@ export default function Button(props) {
             <TouchableOpacity
               disabled={disabled || loading}
               activeOpacity={opacity}
-              hitSlop={[20, 20, 20, 20]}
+              hitSlop={{ top: 20, bottom: 20, left: 20, right: 20 }}
             >
               {loading ? <Spin visible /> : <Text style={textStyles}>{children}</Text>}
             </TouchableOpacity>

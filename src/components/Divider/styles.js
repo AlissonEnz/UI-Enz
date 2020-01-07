@@ -4,8 +4,9 @@ export default theme =>
   StyleSheet.create({
     divider: {
       height: 0,
-      margin: theme.sizes.base * 2,
+      marginVertical: theme.sizes.md * 2,
       borderBottomColor: theme.colors.gray,
-      borderBottomWidth: StyleSheet.hairlineWidth
+      borderBottomWidth: StyleSheet.hairlineWidth,
+      width: '100%'
     }
   });

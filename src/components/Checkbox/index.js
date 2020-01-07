@@ -34,7 +34,11 @@ export default function Checkbox(props) {
         ];
 
         return (
-          <TouchableOpacity {...rest} hitSlop={[20, 20, 20, 20]} onPress={handleChange}>
+          <TouchableOpacity
+            {...rest}
+            hitSlop={{ top: 20, bottom: 20, left: 20, right: 20 }}
+            onPress={handleChange}
+          >
             <View style={checkboxStyles}>{checked && <Text style={stylesheet.text}>✓</Text>}</View>
           </TouchableOpacity>
         );

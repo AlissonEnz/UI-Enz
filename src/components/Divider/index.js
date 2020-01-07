@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { View } from 'react-native-animatable';
 
 import styles from './styles';
-import Block from '../Block';
 import { ThemeContext } from '../../constants/context';
 
 export default function Divider(props) {
@@ -14,7 +14,7 @@ export default function Divider(props) {
         const stylesheet = styles(theme);
         const dividerStyles = [stylesheet.divider, style];
 
-        return <Block style={dividerStyles} {...rest} />;
+        return <View style={dividerStyles} {...rest} />;
       }}
     </ThemeContext.Consumer>
   );

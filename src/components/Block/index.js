@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { SafeAreaView } from 'react-native';
 import { View } from 'react-native-animatable';
 
 import { ThemeContext } from '../../constants/context';
@@ -48,6 +49,7 @@ export default function Block(props) {
 
   const {
     flex,
+    safe,
     row,
     column,
     center,
@@ -90,6 +92,14 @@ export default function Block(props) {
           style
         ];
 
+        if (safe) {
+          return (
+            <View style={blockStyles} {...rest}>
+              <SafeAreaView>{children}</SafeAreaView>
+            </View>
+          );
+        }
+
         return (
           <View style={blockStyles} {...rest}>
             {children}
@@ -102,6 +112,7 @@ export default function Block(props) {
 
 Block.defaultProps = {
   flex: true,
+  safe: false,
   left: false,
   center: false,
   right: false,
@@ -121,6 +132,7 @@ Block.defaultProps = {
 
 Block.propTypes = {
   flex: PropTypes.bool,
+  safe: PropTypes.bool,
   left: PropTypes.bool,
   center: PropTypes.bool,
   right: PropTypes.bool,
